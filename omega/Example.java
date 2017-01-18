@@ -1,9 +1,9 @@
 package omega;
 
-import omega.OmegaClient;
 import omega.TestEventListener;
+import omega.OmegaClient;
 
-public class UnitTest {
+public class Example {
 	public static void main(String args[]) {
 		OmegaClient client = new OmegaClient();
 		client.addListener(new TestEventListener());

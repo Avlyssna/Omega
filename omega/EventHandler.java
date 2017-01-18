@@ -1,19 +1,21 @@
 package omega;
 
 import org.json.JSONArray;
+
 import java.util.LinkedList;
 import java.util.List;
+
 import omega.EventListener;
 
 public class EventHandler {
-	protected static final String EVENT_CONNECTED = "connected";
-	protected static final String EVENT_DISCONNECTED = "strangerDisconnected";
-	protected static final String EVENT_WAITING = "waiting";
-	protected static final String EVENT_RECAPTCHA_REQUIRED = "recaptchaRequired";
-	protected static final String EVENT_RECAPTCHA_REJECTED = "recaptchaRejected";
-	protected static final String EVENT_MESSAGE_RECIEVED = "gotMessage";
-	protected static final String EVENT_TYPING_STARTED = "typing";
-	protected static final String EVENT_TYPING_STOPPED = "stoppedTyping";
+	public static final String EVENT_CONNECTED = "connected";
+	public static final String EVENT_DISCONNECTED = "strangerDisconnected";
+	public static final String EVENT_WAITING = "waiting";
+	public static final String EVENT_RECAPTCHA_REQUIRED = "recaptchaRequired";
+	public static final String EVENT_RECAPTCHA_REJECTED = "recaptchaRejected";
+	public static final String EVENT_MESSAGE_RECIEVED = "gotMessage";
+	public static final String EVENT_TYPING_STARTED = "typing";
+	public static final String EVENT_TYPING_STOPPED = "stoppedTyping";
 
 	private List<EventListener> listeners = new LinkedList<EventListener>();
 

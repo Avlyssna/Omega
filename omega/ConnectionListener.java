@@ -3,34 +3,34 @@ package omega;
 import omega.EventAdapter;
 
 public class ConnectionListener extends EventAdapter {
-	private Boolean status = Boolean.FALSE;
+	private boolean state = false;
 
 	// Getters and setters
-	public synchronized Boolean getConnectionStatus() {
-		return status;
+	public synchronized boolean getConnectionState() {
+		return state;
 	}
 
-	public synchronized void setConnectionStatus(Boolean status) {
-		this.status = status;
+	public synchronized void setConnectionState(boolean state) {
+		this.state = state;
 	}
 
 	// Convenience functions
-	public Boolean isConnected() {
-		return getConnectionStatus();
+	public boolean isConnected() {
+		return getConnectionState();
 	}
 
-	public Boolean isNotConnected() {
-		return !getConnectionStatus();
+	public boolean isNotConnected() {
+		return !getConnectionState();
 	}
 
 	// Handling events
 	@Override
 	public void onConnect() {
-		setConnectionStatus(Boolean.TRUE);
+		setConnectionState(true);
 	}
 
 	@Override
 	public void onDisconnect() {
-		setConnectionStatus(Boolean.FALSE);
+		setConnectionState(false);
 	}
 }
