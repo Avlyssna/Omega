@@ -33,6 +33,14 @@ public class OmegaClient implements Runnable {
 		eventHandler.removeListener(listener);
 	}
 
+	public boolean isConnected() {
+		return connectionListener.isConnected();
+	}
+
+	public boolean isNotConnected() {
+		return connectionListener.isNotConnected();
+	}
+
 	public synchronized String getServer() {
 		return httpClient.getBaseUrl();
 	}
@@ -183,6 +191,7 @@ public class OmegaClient implements Runnable {
 		parameters.put("id", clientId);
 
 		if (httpClient.post("disconnect", parameters) == "win") {
+			connectionListener.setConnectionState(false);
 			return true;
 		} else {
 			return false;
